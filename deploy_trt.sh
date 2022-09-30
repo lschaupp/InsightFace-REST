@@ -26,7 +26,7 @@ n_workers=1
 # set square dimensions, like 640x640 for better accuracy.
 # ATTENTION: For TensorRT backend this size currently can't be set during
 # runtime.
-max_size=640,640
+max_size=320,320
 
 # Force FP16 mode for building TensorRT engines, even if it's not supported.
 # Please check that your GPU supports FP16, otherwise performance may drop.
@@ -40,10 +40,10 @@ force_fp16=False
 ## scrfd_500m_gnkps, scrfd_2.5g_gnkps, scrfd_10g_gnkps
 ## yolov5l-face, yolov5m-face, yolov5s-face, yolov5n-face, yolov5n-0.5
 ## Note: SCRFD family models requires input image shape dividable by 32, i.e 640x640, 1024x768.
-det_model=scrfd_10g_gnkps
+det_model=scrfd_10g_bnkps
 
 ## Maximum batch size for detection model
-det_batch_size=1
+det_batch_size=8
 
 # REC MODELS:
 ## None, arcface_r100_v1, glintr100, w600k_r50, w600k_mbf
@@ -75,7 +75,7 @@ extract_embeddings=True
 ## Estimate gender/age
 detect_ga=False
 ##Face detection probability threshold
-det_thresh=0.6
+det_thresh=0.5
 
 
 # DEPLOY CONTAINERS
